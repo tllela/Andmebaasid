@@ -39,8 +39,8 @@ andmebaasidega seotud SQL kood ja konspektid
     SELECT * FROM opilane;
 
     ```
-    ```
 - Andmete sisetamine tabelisse
+  ```
 
 INSERT INTO opilane
 VALUES ('Artjom', 'Jegorov', '2000-12-10', 1, '+325689', 'Tallinn', 4.5);
@@ -49,7 +49,7 @@ INSERT INTO opilane (perenimi, eesnimi, keskminehinne)
 VALUES ('Sereda', 'Ivan', 4.2),
        ('Holovanov', 'Ivan', 4.2),
        ('Suvorov', 'Marko', 5.0);
-    ```
+	   ```
 
 
 ## ALTER TABLE 
