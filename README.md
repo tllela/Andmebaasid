@@ -53,6 +53,7 @@ VALUES ('Sereda', 'Ivan', 4.2),
 
 
 ## ALTER TABLE 
+```
 -tabeli struktuuri muutmine (struktuur: veerudenimed, andmetuubid, piirangud)
 1. uue veeru lisamine
  --uue veeru lisamine
@@ -103,6 +104,6 @@ VALUES ('Sereda', 'Ivan', 4.2),
 	--kontrollimiseks- taidame tabeli opilane
 	INSERT INTO opilane
 	VALUES ('Leena','Jegorova', '2002-12-10',1,'+3727473','Tallinn', 4.5, '28490203', 1);
-
+```
 
    
