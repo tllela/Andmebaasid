@@ -43,8 +43,60 @@ andmebaasidega seotud SQL kood ja konspektid
     SELECT * FROM opilane;
 
     ```
-- Andmete sisetamine tabelisse
-  ```
+##Admete sisetamine tabelisse
+## Seosed (tabelivahelised seosed)
+    - ülk-ühele (nt mees-naine)
+    - üks-mitmele (nt ema-lapsed)
+    <img width="300" height="300" alt="{95A32110-C29B-4A97-92B8-81AA90C89945}" src="https://github.com/user-attachments/assets/ea44d13c-d0b6-41c8-973a-4bd06dcea69b" />
+    - mitu-mitmele (nt õpilane - õpetajad)
+
+      ## Piirangud
+      constraint - ограничения (5)
+      1. PRIMARY KEY
+      2. FOREIGN KEY
+      3. CHECK
+      4. NOT NULL
+      5. UNIQUE
+
+--õpetaja
+```
+CREATE TABLE opetaja(
+opetajaID int Primary Key identity(1,1),
+nimi varchar(25),
+epost varchar(35),
+ruhm  varchar(30) );
+
+SELECT * FROM opetaja;
+INSERT INTO opetaja
+VALUES ('Anton', 'anton@gmail.com','TITpv24');
+
+INSERT INTO opetaja (nimi, epost, ruhm)
+VALUES ('Lury', 'lury@gmail.com', 'TITpv24'),
+('Agapov', 'agapov@gmail.com','TITpv24');
+
+--2
+CREATE TABLE tund(
+tundId int PRIMARY KEY identity(1,1),
+kuupaev DATE,
+tundnimi varchar(30),
+opetajaID int,
+FOREIGN KEY (opetajaID) REFERENCES opetaja(opetajaID),
+opetamineID int,
+FOREIGN KEY (opetamineID) REFERENCES opetaja(opetamineID)
+);
+
+SELECT * FROM tund;
+
+INSERT INTO tund(kuupaev, tundnimi, opetajaID, opetamineID)
+VALUES ('2026-04-16', 'Windows', 1,1),
+('2026-04-17', 'Linux', 2,2),
+('2026-04-18', 'Operatsioone', 3,3);
+TRUNCATE TABLE tund;
+
+DROP TABLE tund
+```
+
+```
 
 INSERT INTO opilane
 VALUES ('Artjom', 'Jegorov', '2000-12-10', 1, '+325689', 'Tallinn', 4.5);
@@ -53,7 +105,7 @@ INSERT INTO opilane (perenimi, eesnimi, keskminehinne)
 VALUES ('Sereda', 'Ivan', 4.2),
        ('Holovanov', 'Ivan', 4.2),
        ('Suvorov', 'Marko', 5.0);
-	   ```
+```
 
 
 ## ALTER TABLE 
