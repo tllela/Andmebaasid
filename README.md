@@ -1,7 +1,11 @@
 # Andmebaasid
 # Andmebaasid
 andmebaasidega seotud SQL kood ja konspektid
-
+##sisukord
+-[Põhimõisted](#-põhimõisted)
+-[Andmetüübid](#-ändmetüübid)
+-[SQL-structureQueryLanguage-struktureeritudpäringukeel](#-sql-structureQueryLanguage-struktureeritud päringu keel)
+-[ALTER TABLE](#-altertable)
 ## Põhimõisted
 
 - andmebaas - struktureeritud andmete kogum
