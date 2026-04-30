@@ -89,3 +89,41 @@ SELECT * FROM reserved_room;
 ```
 <img width="481" height="123" alt="{9D5498CA-B7D7-4331-8FB5-820B77C4F474}" src="https://github.com/user-attachments/assets/1fbe5b65-899a-4de7-9b68-9c21ffc90937" />
 
+--6. occupied_room
+```
+CREATE TABLE occupied_room(
+    occupied_roomID int PRIMARY KEY identity(1,1),
+    check_in DATE,
+    check_out DATE,
+    room_id int,
+    reservationID int,
+    FOREIGN KEY (room_id) REFERENCES room(room_ID),
+    FOREIGN KEY (reservationID) REFERENCES reservation(reservationID)
+);
+
+SELECT * FROM occupied_room;
+
+INSERT INTO occupied_room
+VALUES ('2006-11-06', '2006-12-05', 2, 3);
+```
+
+<img width="450" height="138" alt="{0833D1DF-3F80-4868-B75C-5F00676F4329}" src="https://github.com/user-attachments/assets/7a928dbe-2e30-4dfb-9c92-51a6ed52d5b2" />
+
+--7. hosted_at
+```
+--7. hosted_at
+
+CREATE TABLE hosted_room(
+    hosted_atID int PRIMARY KEY identity(1,1),
+    guest_id int,
+    occupied_room_id int,
+    FOREIGN KEY (guest_id) REFERENCES guest(guestID),
+    FOREIGN KEY (occupied_room_id) REFERENCES occupied_room(occupied_roomID)
+);
+
+SELECT * FROM hosted_room;
+
+INSERT INTO hosted_room
+VALUES (3,2);
+```
+<img width="327" height="113" alt="{DE28E4C8-291D-4C96-B4AB-D8841EF6BE05}" src="https://github.com/user-attachments/assets/13e394a9-ebaf-45cc-abd5-98276af0ece9" />
