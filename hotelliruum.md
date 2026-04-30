@@ -34,3 +34,19 @@ VALUES ('2025-09-01', '2025-10-30', 'quest', 3);
 ```
 
 <img width="428" height="136" alt="{527C7F14-4385-4B0F-9275-68740F701AE9}" src="https://github.com/user-attachments/assets/3a71ba89-e132-4ed8-b796-6c6f23b391ad" />
+
+--3. room_type
+```
+CREATE TABLE room_type(
+room_type_id int primary key identity(1,1),
+descriprion varchar(80),
+max_capacity int 
+);
+
+SELECT * FROM room_type;
+
+INSERT INTO room_type
+VALUES ('standart', 1);
+```
+<img width="335" height="98" alt="{022910A9-3532-4514-A7B3-6B6D95ACC42F}" src="https://github.com/user-attachments/assets/08d667e0-3c34-414b-9003-cfd8fee61695" />
+
