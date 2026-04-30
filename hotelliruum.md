@@ -50,3 +50,42 @@ VALUES ('standart', 1);
 ```
 <img width="335" height="98" alt="{022910A9-3532-4514-A7B3-6B6D95ACC42F}" src="https://github.com/user-attachments/assets/08d667e0-3c34-414b-9003-cfd8fee61695" />
 
+--4. room
+
+```
+CREATE TABLE room(
+room_id int primary key identity(1,1),
+number varchar(80),
+name varchar(40),
+status varchar(10),
+smoke bit,
+room_type_id int,
+foreign key (room_type_id) references room_type(room_type_id)
+);
+
+SELECT * FROM room;
+
+INSERT INTO room
+VALUES ('A101', 'class', 'vaba', 1,1);
+```
+<img width="384" height="110" alt="{672BEC6E-F8AE-4274-A8FA-17E9DBFF26D9}" src="https://github.com/user-attachments/assets/b149907e-da32-4577-a9be-b74f8d9a7602" />
+
+--5. reserved_room
+```
+CREATE TABLE reserved_room(
+reserved_roomID int primary key identity(1,1),
+number_of_rooms int,
+room_type_id int,
+reservationID int,
+foreign key (room_type_id) references room_type(room_type_id),
+foreign key (reservationID) references reservation(reservationID),
+status varchar(20)
+);
+
+INSERT INTO reserved_room
+VALUES (3, 1, 2,'ready');
+
+SELECT * FROM reserved_room;
+```
+<img width="481" height="123" alt="{9D5498CA-B7D7-4331-8FB5-820B77C4F474}" src="https://github.com/user-attachments/assets/1fbe5b65-899a-4de7-9b68-9c21ffc90937" />
+
