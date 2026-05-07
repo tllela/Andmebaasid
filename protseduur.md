@@ -52,3 +52,23 @@ EXEC kustutaGuestt 1;
 ```
 <img width="366" height="323" alt="{13CF8603-4A51-42EF-BC64-3E6C4214994C}" src="https://github.com/user-attachments/assets/0ee23020-29ef-4aec-902d-a4b938cd1db5" />
 
+```
+--otsing esimese tähe järgi
+CREATE PROCEDURE otsing1tahtt
+@taht char(1)
+AS
+BEGIN
+    SELECT * FROM guestt WHERE firstname LIKE @taht + '%'; --% - teised sümboolid
+END
+
+--kutse
+EXEC otsing1tahtt 'L'
+```
+```
+--lisame us veerg
+ALTER TABLE guest ADD arveSumma money;
+SELECT * FROM guest
+
+Update guest set arveSumma=800 WHERE guestId=2
+```
+<img width="403" height="138" alt="{4A7AF73D-A258-493F-BBF3-3B541769260A}" src="https://github.com/user-attachments/assets/1fae3be1-b1c4-4418-aca1-84352b8f76df" />
